@@ -9,6 +9,7 @@ try {
   glob(`${process.cwd()}/**/*`, (er, files) => {
     files.forEach(filePath => {
       if (filePath.endsWith(".js") && filePath.includes("default")) {
+        console.log("Obfuscating" + filePath);
         fs.readFile(filePath, (err, content) => {
           content = content.toString();
           const obfuscatedContent = JavaScriptObfuscator.obfuscate(
