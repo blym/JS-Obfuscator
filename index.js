@@ -8,14 +8,15 @@ const fs = require("fs");
 try {
   glob(`${process.cwd()}/**/*`, (er, files) => {
     files.forEach(filePath => {
-      if (filePath.endsWith(".js") && filePath.includes("default")) {
-        console.log("Obfuscating" + filePath);
+      if (filePath.endsWith(".js") && filePath.includes("default") && !filePath.includes("-web.js")) {
+        console.log("Obfuscating: " + filePath);
         fs.readFile(filePath, (err, content) => {
           content = content.toString();
           const obfuscatedContent = JavaScriptObfuscator.obfuscate(
             content
           ).getObfuscatedCode();
-          var webFilePath = filePath.replace('.js', '-web.js')
+          var webFilePath = filePath.replace('.js', '-web.js');
+          console.log("Writing To: " + webFilePath);
           fs.writeFileSync(webFilePath, obfuscatedContent);
         });
       }
