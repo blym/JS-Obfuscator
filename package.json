@@ -1,21 +1,31 @@
 {
   "name": "js-obfuscator",
   "version": "1.0.0",
-  "description": "",
+  "description": "An action for all of your obfuscating needs.",
   "main": "index.js",
   "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "obfuscate": "./index.js"
+    "obfuscate": "index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.2.1",
-    "@actions/github": "^2.0.1",
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^2.2.0",
+    "fs": "0.0.1-security",
     "glob": "^7.1.6",
-    "javascript-obfuscator": "^0.27.2"
-  }
+    "javascript-obfuscator": "^0.27.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blym/JS-Obfuscator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/blym/JS-Obfuscator/issues"
+  },
+  "homepage": "https://github.com/blym/JS-Obfuscator#readme"
 }
