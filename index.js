@@ -14,7 +14,8 @@ try {
           const obfuscatedContent = JavaScriptObfuscator.obfuscate(
             content
           ).getObfuscatedCode();
-          fs.writeFileSync(filePath, obfuscatedContent);
+          var webFilePath = filePath.replace('.js', '-web.js')
+          fs.writeFileSync(webFilePath, obfuscatedContent);
         });
       }
     });
