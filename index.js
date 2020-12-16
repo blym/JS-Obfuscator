@@ -8,7 +8,7 @@ const fs = require("fs");
 try {
   glob(`${process.cwd()}/**/*`, (er, files) => {
     files.forEach(filePath => {
-      if (filePath.endsWith(".js") && filePath.includes("default") && !filePath.includes("-web.js")) {
+      if (filePath.endsWith(".js") && filePath.includes("default") && !filePath.includes("-web.js") && !filePath.includes("node_modules")) {
         console.log("Obfuscating: " + filePath);
         fs.readFile(filePath, (err, content) => {
           content = content.toString();
